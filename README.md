@@ -1,6 +1,6 @@
 # Tile Window Manager
 
-A Windows tiling window manager similar to Komorebi that automatically arranges windows in various layouts.
+A Windows tiling window manager using win32 api. Basically a scratch project. Wont Recommend it for Regular use.
 
 ## Building the Project
 
@@ -11,19 +11,13 @@ A Windows tiling window manager similar to Komorebi that automatically arranges 
    taskkill /F /IM main.exe
    ```
 
-2. Clean existing files:
-
-   ```bash
-   del windows_dll.dll windows_dll.lib windows_dll.obj main.exe main.obj
-   ```
-
-3. Compile the DLL containing the shell hooks:
+2. Compile the DLL containing the shell hooks:
 
    ```bash
    cl /LD /EHsc windows_dll.cpp /Fe:"windows_dll.dll" /link user32.lib kernel32.lib
    ```
 
-4. Then compile the main application:
+3. Then compile the main application:
    ```bash
    cl /EHsc main.cpp /Fe:"main.exe" /link user32.lib shell32.lib kernel32.lib windows_dll.lib
    ```
@@ -38,25 +32,13 @@ Start the tile window manager:
 .\main.exe
 ```
 
-## Features
-
-- Automatically tiles windows when new windows are created/activated
-- Multiple tiling layouts:
-  - Grid: Windows arranged in a grid pattern (default)
-  - Horizontal: Windows arranged side by side
-  - Vertical: Windows stacked on top of each other
-  - Main+Deck: One large window with others stacked to the side
-- Keyboard shortcuts for changing layouts
-- Smart window filtering to avoid tiling system windows
-- Adds configurable padding between windows
-
 ## Keyboard Shortcuts
 
-- **Alt+Shift+1**: Switch to Grid layout
-- **Alt+Shift+2**: Switch to Horizontal layout
-- **Alt+Shift+3**: Switch to Vertical layout
-- **Alt+Shift+4**: Switch to Main+Deck layout
-- **Alt+Shift+T**: Force retiling of all windows
+- **WIN+Shift+1**: Switch to Grid layout
+- **WIN+Shift+2**: Switch to Horizontal layout
+- **WIN+Shift+3**: Switch to Vertical layout
+- **WIN+Shift+4**: Switch to Main+Deck layout
+- **WIN+Shift+T**: Force retiling of all windows
 
 ## How It Works
 
@@ -71,12 +53,3 @@ You can modify the `TilingConfig` struct in `windows_dll.cpp` to adjust:
 - Default layout
 - Main window ratio (for Main+Deck layout)
 - Other tiling parameters
-
-## Troubleshooting
-
-If you encounter issues:
-
-- Make sure both the DLL and EXE are in the same directory
-- Run the application with administrator privileges
-- Check that you have the required Visual C++ Runtime
-- If windows aren't being tiled, try pressing Alt+Shift+T to force retiling
