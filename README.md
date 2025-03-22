@@ -1,6 +1,10 @@
 # Tile Window Manager
 
-A Windows tiling window manager using win32 api. Basically a scratch project. Wont Recommend it for Regular use.
+A Windows tiling window manager using win32 api. Basically a scratch project. Wont Recommend it for Regular use. 
+A Windows tiling window manager using the Win32 API. This is an experimental project and not recommended for daily use.
+
+Inspired by [LightWM](https://github.com/nir9/lightwm) - a lightweight tiling window manager for Windows written in C.
+
 
 ## Building the Project
 
@@ -53,3 +57,5 @@ You can modify the `TilingConfig` struct in `windows_dll.cpp` to adjust:
 - Default layout
 - Main window ratio (for Main+Deck layout)
 - Other tiling parameters
+
+
