@@ -1,0 +1,24 @@
+# Build artifacts
+*.dll
+*.exe
+*.lib
+*.obj
+*.pdb
+*.ilk
+*.exp
+*.suo
+*.user
+*.userosscache
+*.sdf
+*.opensdf
+*.VC.db
+*.VC.VC.opendb
+
+# Directories
+.vs/
+Debug/
+Release/
+x64/
+x86/
+build/
+.vscode/
